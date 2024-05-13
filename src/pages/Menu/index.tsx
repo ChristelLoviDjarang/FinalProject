@@ -11,7 +11,7 @@ import {useNavigation} from '@react-navigation/native'; // Import the useNavigat
 import {StackNavigationProp} from '@react-navigation/stack';
 
 // Import the images
-import activities from '../../assets/images/activities.jpeg';
+import activities from '../../assets/images/yoga.jpg';
 import inspirational from '../../assets/images/inspirational.jpeg';
 import article from '../../assets/images/article.jpeg';
 import DIARY from '../../assets/images/DIARY.jpeg';
@@ -27,6 +27,9 @@ const Menu: React.FC = () => {
     console.log(`${label} pressed!`);
     if (label === 'Diary') {
       navigation.navigate('Diary'); // Navigate to the Diary screen
+    }
+    if (label === 'Yoga') {
+      navigation.navigate('Yoga'); // Navigate to the Diary screen
     }
   };
 
@@ -52,8 +55,8 @@ const Menu: React.FC = () => {
             resizeMode="cover">
             <TouchableOpacity
               style={[styles.button, styles.button2]}
-              onPress={() => handlePress('Activities')}>
-              <Text style={styles.buttonText}>Activities</Text>
+              onPress={() => handlePress('Yoga')}>
+              <Text style={styles.buttonText}>Yoga</Text>
             </TouchableOpacity>
           </ImageBackground>
         </View>
@@ -76,8 +79,8 @@ const Menu: React.FC = () => {
             resizeMode="cover">
             <TouchableOpacity
               style={[styles.button, styles.button5]}
-              onPress={() => handlePress('ArticleTips')}>
-              <Text style={styles.buttonText}>Article & Tips</Text>
+              onPress={() => handlePress('Tips')}>
+              <Text style={styles.buttonText}>Tips</Text>
             </TouchableOpacity>
           </ImageBackground>
         </View>
@@ -177,10 +180,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   buttonText: {
-    color: 'black',
+    color: 'white',
     fontSize: 30,
     fontWeight: 'bold',
-    textShadowColor: 'white',
+    textShadowColor: 'black',
     textShadowOffset: {width: -1, height: 1},
     textShadowRadius: 40,
   },
