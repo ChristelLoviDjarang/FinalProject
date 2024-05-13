@@ -7,17 +7,27 @@ import {
   TouchableOpacity,
   ImageBackground,
 } from 'react-native';
+import {useNavigation} from '@react-navigation/native'; // Import the useNavigation hook
+import {StackNavigationProp} from '@react-navigation/stack';
 
-// Import gambar-gambar yang diperlukan
+// Import the images
 import activities from '../../assets/images/activities.jpeg';
 import inspirational from '../../assets/images/inspirational.jpeg';
 import article from '../../assets/images/article.jpeg';
 import DIARY from '../../assets/images/DIARY.jpeg';
 
+interface HomeProps {
+  navigation: StackNavigationProp<any, any>;
+}
+
 const Menu: React.FC = () => {
+  const navigation = useNavigation(); // Use the useNavigation hook to access navigation
+
   const handlePress = (label: string) => {
-    // Handle press logic here
     console.log(`${label} pressed!`);
+    if (label === 'Diary') {
+      navigation.navigate('Diary'); // Navigate to the Diary screen
+    }
   };
 
   return (
@@ -66,7 +76,7 @@ const Menu: React.FC = () => {
             resizeMode="cover">
             <TouchableOpacity
               style={[styles.button, styles.button5]}
-              onPress={() => handlePress('Article')}>
+              onPress={() => handlePress('ArticleTips')}>
               <Text style={styles.buttonText}>Article & Tips</Text>
             </TouchableOpacity>
           </ImageBackground>

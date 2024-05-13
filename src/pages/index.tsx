@@ -1,5 +1,7 @@
 import SplashScreen from './SplashScreen';
 import Home from './Home';
 import Menu from './Menu';
+import Diary from './Diary';
+import Diary2 from './Diary2';
 
-export {SplashScreen, Home, Menu};
+export {SplashScreen, Home, Menu, Diary, Diary2};
